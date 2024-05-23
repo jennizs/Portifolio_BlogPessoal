@@ -61,6 +61,7 @@ function DeletarTema() {
             }
         }
         setIsLoading(false);
+        retornar()
     }
 
     return (
