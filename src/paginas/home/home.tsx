@@ -1,3 +1,5 @@
+import ModalPostagem from "../../components/postagens/ModalPostagem/ModalPostagem";
+import ListaPostagens from "../../components/postagens/listarPostagens/ListarPostagens";
 
 
 
@@ -21,18 +23,19 @@ function Home() {
                                 hover:bg-white
                                 hover:text-indigo-900                                
                                 ">
-                                Nova Postagem
+                               <ModalPostagem />
                             </button>
                         </div>
                     </div>
                     <div className="flex justify-center">
                         <img
-                            src="https://i.imgur.com/VpwApCU.png"
+                            src="https://www.reshot.com/preview-assets/illustrations/ZXT3ULVWKA/business-working-process-ZXT3ULVWKA-w1600.jpg"
                             alt=""
                             className="w-2/3" />
                     </div>
                 </div>
             </div>
+            <ListaPostagens />
         </>
     );
 }
