@@ -4,6 +4,7 @@ import { useContext, useState, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { AuthContext } from "../../../contexts/AuthContext.";
 import Tema from "../../../models/Tema";
+import { toastAlerta } from "../../../utils/ToastAlerta";
 
 function DeletarTema() {
     const navigate = useNavigate();
@@ -21,7 +22,7 @@ function DeletarTema() {
             });
         } catch (error: any) {
             if (error.toString().includes('401')) {
-                alert('O token expirou!');
+                toastAlerta('O token expirou!', 'info');
                 handleLogout();
             }
         }
@@ -29,7 +30,7 @@ function DeletarTema() {
 
     useEffect(() => {
         if (token === '') {
-            alert('Você precisa estar logado!');
+            toastAlerta('Você precisa estar logado!', 'info');
             navigate('/');
         }
     }, [token]);
@@ -50,14 +51,14 @@ function DeletarTema() {
             await deletar(`/temas/${id}`, {
                 headers: { Authorization: token }
             });
-            alert('Tema apagado com sucesso');
+            toastAlerta('Tema apagado com sucesso', 'sucesso');
             retornar();
         } catch (error: any) {
             if (error.toString().includes('401')) {
-                alert('O token expirou!');
+                toastAlerta('O token expirou!', 'info');
                 handleLogout();
             } else {
-                alert('Erro ao excluir tema');
+                toastAlerta('Erro ao excluir tema', 'erro');
             }
         }
         setIsLoading(false);

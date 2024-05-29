@@ -5,6 +5,7 @@ import { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../../../contexts/AuthContext.';
 import Tema from '../../../models/Tema';
 import { buscar } from '../../../services/Service';
+import { toastAlerta } from '../../../utils/ToastAlerta';
 
 function ListaTemas() {
 
@@ -22,7 +23,7 @@ function ListaTemas() {
             })
         } catch (error: any) {
             if (error.toString().includes('401')) {
-                alert('O token expirou!')
+                toastAlerta('O token expirou!', 'info')
                 handleLogout()
             }
         }
@@ -30,7 +31,7 @@ function ListaTemas() {
 
     useEffect(() => {
         if (token === '') {
-            alert('voce precisa estar logado')
+            toastAlerta('voce precisa estar logado', 'info')
             navigate('/')
         }
     }, [token])
