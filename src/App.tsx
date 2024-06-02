@@ -3,7 +3,6 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import './App.css'
 import Footer from './components/footer/footer'
 import Home from './paginas/home/home'
-import Navbar from './components/navBar/NavBar'
 import { AuthProvider } from './contexts/AuthContext.'
 import Cadastro from './paginas/cadastro/Cadastro'
 import ListaTemas from './components/temas/listaTemas/ListaTemas'
@@ -16,6 +15,7 @@ import DeletarPostagem from './components/postagens/deletarPostafem/DeletarPosta
 import 'react-toastify/dist/ReactToastify.css'
 import { ToastContainer } from 'react-toastify'
 import Perfil from './paginas/perfil/Perfil'
+import Navbar from './components/navBar/NavBar'
 function App() {
 
 
