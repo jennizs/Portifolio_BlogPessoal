@@ -4,8 +4,6 @@ import { AuthContext } from "../../contexts/AuthContext.";
 import { toastAlerta } from "../../utils/ToastAlerta";
 
 
-
-
 function Navbar() {
 
     const navigate = useNavigate()
